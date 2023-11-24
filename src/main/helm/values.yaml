@@ -1,0 +1,4 @@
+app:
+  image:
+    repository: "onecx/onecx-product-store-mfe-operator"
+    tag: 999-SNAPSHOT
