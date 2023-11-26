@@ -12,7 +12,7 @@ import io.javaoperatorsdk.operator.api.reconciler.*;
 import io.javaoperatorsdk.operator.processing.event.source.filter.OnAddFilter;
 import io.javaoperatorsdk.operator.processing.event.source.filter.OnUpdateFilter;
 
-@ControllerConfiguration(onAddFilter = ProductMicrofrontendReconciler.SecretAddFilter.class, onUpdateFilter = ProductMicrofrontendReconciler.SecretUpdateFilter.class)
+@ControllerConfiguration(onAddFilter = ProductMicrofrontendReconciler.MicrofrontendAddFilter.class, onUpdateFilter = ProductMicrofrontendReconciler.MicrofrontendUpdateFilter.class)
 public class ProductMicrofrontendReconciler implements Reconciler<Microfrontend>, ErrorStatusHandler<Microfrontend> {
 
     private static final Logger log = LoggerFactory.getLogger(ProductMicrofrontendReconciler.class);
@@ -57,7 +57,7 @@ public class ProductMicrofrontendReconciler implements Reconciler<Microfrontend>
         status.setProductName(null);
         status.setMfeId(null);
         status.setResponseCode(responseCode);
-        status.setStatus("ERROR");
+        status.setStatus(MicrofrontendStatus.Status.ERROR);
         status.setMessage(e.getMessage());
         microfrontend.setStatus(status);
         return ErrorStatusUpdateControl.updateStatus(microfrontend);
@@ -71,41 +71,29 @@ public class ProductMicrofrontendReconciler implements Reconciler<Microfrontend>
         result.setResponseCode(responseCode);
         var status = switch (responseCode) {
             case 201:
-                yield "CREATED";
+                yield MicrofrontendStatus.Status.CREATED;
             case 200:
-                yield "UPDATED";
+                yield MicrofrontendStatus.Status.UPDATED;
             default:
-                yield "UNDEFINED";
+                yield MicrofrontendStatus.Status.UNDEFINED;
         };
         result.setStatus(status);
         microfrontend.setStatus(result);
     }
 
-    public static class SecretAddFilter implements OnAddFilter<Microfrontend> {
+    public static class MicrofrontendAddFilter implements OnAddFilter<Microfrontend> {
 
         @Override
         public boolean accept(Microfrontend resource) {
-            if (resource.getSpec() == null) {
-                return false;
-            }
-            if (!MULTI_ENABLED) {
-                return true;
-            }
-            return MULTI_NAME.equals(resource.getSpec().getProductStore());
+            return resource.getSpec() != null;
         }
     }
 
-    public static class SecretUpdateFilter implements OnUpdateFilter<Microfrontend> {
+    public static class MicrofrontendUpdateFilter implements OnUpdateFilter<Microfrontend> {
 
         @Override
         public boolean accept(Microfrontend newResource, Microfrontend oldResource) {
-            if (newResource.getSpec() == null) {
-                return false;
-            }
-            if (!MULTI_ENABLED) {
-                return true;
-            }
-            return MULTI_NAME.equals(newResource.getSpec().getProductStore());
+            return newResource.getSpec() != null;
         }
     }
 

@@ -16,10 +16,21 @@ public class MicrofrontendStatus extends ObservedGenerationAwareStatus {
     private int responseCode;
 
     @JsonProperty("status")
-    private String status;
+    private Status status;
 
     @JsonProperty("message")
     private String message;
+
+    public enum Status {
+
+        ERROR,
+
+        CREATED,
+
+        UPDATED,
+
+        UNDEFINED;
+    }
 
     public String getMessage() {
         return message;
@@ -53,11 +64,11 @@ public class MicrofrontendStatus extends ObservedGenerationAwareStatus {
         this.productName = productName;
     }
 
-    public String getStatus() {
+    public Status getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
 }

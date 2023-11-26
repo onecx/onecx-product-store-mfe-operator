@@ -5,10 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MicrofrontendSpec {
-
-    @JsonProperty("product-store")
-    private String productStore;
-
     @JsonProperty("mfe-id")
     private String mfeId;
 
@@ -62,14 +58,6 @@ public class MicrofrontendSpec {
 
     public void setMfeId(String mfeId) {
         this.mfeId = mfeId;
-    }
-
-    public String getProductStore() {
-        return productStore;
-    }
-
-    public void setProductStore(String productStore) {
-        this.productStore = productStore;
     }
 
     public String getBasePath() {
