@@ -3,7 +3,6 @@ package io.github.onecx.product.store.mfe.operator;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.WebApplicationException;
 
-import org.eclipse.microprofile.config.ConfigProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,12 +18,6 @@ public class ProductMicrofrontendReconciler implements Reconciler<Microfrontend>
 
     @Inject
     ProductStoreService service;
-
-    private static final boolean MULTI_ENABLED = ConfigProvider.getConfig()
-            .getValue("onecx.product.store.mfe.operator.multi-enabled", boolean.class);
-
-    private static final String MULTI_NAME = ConfigProvider.getConfig()
-            .getValue("onecx.product.store.mfe.operator.name", String.class);
 
     @Override
     public UpdateControl<Microfrontend> reconcile(Microfrontend microfrontend, Context<Microfrontend> context)
