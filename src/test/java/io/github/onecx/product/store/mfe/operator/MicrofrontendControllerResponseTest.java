@@ -16,13 +16,13 @@ import io.quarkus.test.InjectMock;
 import io.quarkus.test.junit.QuarkusTest;
 
 @QuarkusTest
-class ProductMicrofrontendReconcilerResponseTest extends AbstractTest {
+class MicrofrontendControllerResponseTest extends AbstractTest {
 
     @InjectMock
     ProductStoreService productStoreService;
 
     @Inject
-    ProductMicrofrontendReconciler reconciler;
+    MicrofrontendController reconciler;
 
     @BeforeEach
     void beforeAll() {

@@ -6,6 +6,6 @@ import io.fabric8.kubernetes.model.annotation.Group;
 import io.fabric8.kubernetes.model.annotation.Version;
 
 @Version("v1")
-@Group("io.github.onecx.product.store.mfe")
+@Group("io.github.onecx.product.store")
 public class Microfrontend extends CustomResource<MicrofrontendSpec, MicrofrontendStatus> implements Namespaced {
 }
