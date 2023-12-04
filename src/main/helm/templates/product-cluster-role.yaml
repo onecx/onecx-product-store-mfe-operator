@@ -1,0 +1,19 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ .Release.Name }}-{{ .Values.app.name }}-cluster-role
+rules:
+  - apiGroups:
+      - io.github.onecx.product.store
+    resources:
+      - "microfrontends"
+      - "microfrontends/status"
+      - "microfrontends/finalizers"
+    verbs:
+      - get
+      - list
+      - watch
+      - patch
+      - update
+      - create
+      - delete

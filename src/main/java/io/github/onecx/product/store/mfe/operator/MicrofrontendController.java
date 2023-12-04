@@ -1,5 +1,7 @@
 package io.github.onecx.product.store.mfe.operator;
 
+import static io.javaoperatorsdk.operator.api.reconciler.Constants.WATCH_CURRENT_NAMESPACE;
+
 import jakarta.inject.Inject;
 import jakarta.ws.rs.WebApplicationException;
 
@@ -11,10 +13,10 @@ import io.javaoperatorsdk.operator.api.reconciler.*;
 import io.javaoperatorsdk.operator.processing.event.source.filter.OnAddFilter;
 import io.javaoperatorsdk.operator.processing.event.source.filter.OnUpdateFilter;
 
-@ControllerConfiguration(onAddFilter = ProductMicrofrontendReconciler.MicrofrontendAddFilter.class, onUpdateFilter = ProductMicrofrontendReconciler.MicrofrontendUpdateFilter.class)
-public class ProductMicrofrontendReconciler implements Reconciler<Microfrontend>, ErrorStatusHandler<Microfrontend> {
+@ControllerConfiguration(name = "microfrontend", namespaces = WATCH_CURRENT_NAMESPACE, onAddFilter = MicrofrontendController.MicrofrontendAddFilter.class, onUpdateFilter = MicrofrontendController.MicrofrontendUpdateFilter.class)
+public class MicrofrontendController implements Reconciler<Microfrontend>, ErrorStatusHandler<Microfrontend> {
 
-    private static final Logger log = LoggerFactory.getLogger(ProductMicrofrontendReconciler.class);
+    private static final Logger log = LoggerFactory.getLogger(MicrofrontendController.class);
 
     @Inject
     ProductStoreService service;
