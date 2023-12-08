@@ -13,10 +13,6 @@
     <artifactId>onecx-product-store-mfe-operator</artifactId>
     <version>999-SNAPSHOT</version>
 
-    <properties>
-        <sonar.cpd.exclusions>**/**/*Spec,**/**/*Status</sonar.cpd.exclusions>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>io.quarkiverse.operatorsdk</groupId>

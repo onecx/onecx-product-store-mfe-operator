@@ -49,10 +49,10 @@ public class MicrofrontendController implements Reconciler<Microfrontend>, Error
 
         log.error("Error reconcile resource", e);
         MicrofrontendStatus status = new MicrofrontendStatus();
-        status.setProductName(null);
-        status.setAppId(null);
-        status.setAppName(null);
-        status.setAppVersion(null);
+        status.setRequestProductName(null);
+        status.setRequestAppId(null);
+        status.setRequestAppName(null);
+        status.setRequestAppVersion(null);
         status.setResponseCode(responseCode);
         status.setStatus(MicrofrontendStatus.Status.ERROR);
         status.setMessage(e.getMessage());
@@ -63,10 +63,10 @@ public class MicrofrontendController implements Reconciler<Microfrontend>, Error
     private void updateStatusPojo(Microfrontend microfrontend, int responseCode) {
         MicrofrontendStatus result = new MicrofrontendStatus();
         MicrofrontendSpec spec = microfrontend.getSpec();
-        result.setProductName(spec.getProductName());
-        result.setAppId(spec.getAppId());
-        result.setAppName(spec.getAppName());
-        result.setAppVersion(spec.getAppVersion());
+        result.setRequestProductName(spec.getProductName());
+        result.setRequestAppId(spec.getAppId());
+        result.setRequestAppName(spec.getAppName());
+        result.setRequestAppVersion(spec.getAppVersion());
         result.setResponseCode(responseCode);
         var status = switch (responseCode) {
             case 201:

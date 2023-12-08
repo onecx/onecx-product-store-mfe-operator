@@ -7,16 +7,16 @@ import io.javaoperatorsdk.operator.api.ObservedGenerationAwareStatus;
 public class MicrofrontendStatus extends ObservedGenerationAwareStatus {
 
     @JsonProperty("productName")
-    private String productName;
+    private String requestProductName;
 
     @JsonProperty("appId")
-    private String appId;
+    private String requestAppId;
 
     @JsonProperty("appVersion")
-    private String appVersion;
+    private String requestAppVersion;
 
     @JsonProperty("appName")
-    private String appName;
+    private String requestAppName;
 
     @JsonProperty("responseCode")
     private int responseCode;
@@ -38,12 +38,36 @@ public class MicrofrontendStatus extends ObservedGenerationAwareStatus {
         UNDEFINED;
     }
 
-    public String getMessage() {
-        return message;
+    public String getRequestProductName() {
+        return requestProductName;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setRequestProductName(String requestProductName) {
+        this.requestProductName = requestProductName;
+    }
+
+    public String getRequestAppId() {
+        return requestAppId;
+    }
+
+    public void setRequestAppId(String requestAppId) {
+        this.requestAppId = requestAppId;
+    }
+
+    public String getRequestAppVersion() {
+        return requestAppVersion;
+    }
+
+    public void setRequestAppVersion(String requestAppVersion) {
+        this.requestAppVersion = requestAppVersion;
+    }
+
+    public String getRequestAppName() {
+        return requestAppName;
+    }
+
+    public void setRequestAppName(String requestAppName) {
+        this.requestAppName = requestAppName;
     }
 
     public int getResponseCode() {
@@ -54,14 +78,6 @@ public class MicrofrontendStatus extends ObservedGenerationAwareStatus {
         this.responseCode = responseCode;
     }
 
-    public String getProductName() {
-        return productName;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
     public Status getStatus() {
         return status;
     }
@@ -70,27 +86,11 @@ public class MicrofrontendStatus extends ObservedGenerationAwareStatus {
         this.status = status;
     }
 
-    public String getAppId() {
-        return appId;
+    public String getMessage() {
+        return message;
     }
 
-    public void setAppId(String appId) {
-        this.appId = appId;
-    }
-
-    public String getAppVersion() {
-        return appVersion;
-    }
-
-    public void setAppVersion(String appVersion) {
-        this.appVersion = appVersion;
-    }
-
-    public String getAppName() {
-        return appName;
-    }
-
-    public void setAppName(String appName) {
-        this.appName = appName;
+    public void setMessage(String message) {
+        this.message = message;
     }
 }
