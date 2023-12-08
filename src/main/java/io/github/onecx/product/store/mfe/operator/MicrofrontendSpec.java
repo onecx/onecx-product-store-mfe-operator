@@ -1,128 +1,55 @@
 package io.github.onecx.product.store.mfe.operator;
 
+import java.util.List;
+import java.util.Set;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MicrofrontendSpec {
-    @JsonProperty("mfe-id")
-    private String mfeId;
 
-    @JsonProperty("base-path")
-    private String basePath;
-    @JsonProperty("product-name")
-    private String productName;
-
-    @JsonProperty("remote-entry")
-    private String remoteEntry;
-
-    @JsonProperty("remote-name")
-    private String remoteName;
-
-    @JsonProperty("exposed-module")
-    private String exposedModule;
-
-    @JsonProperty("display-name")
-    private String displayName;
-
-    @JsonProperty("module-type")
-    private ModuleType moduleType;
-
-    @JsonProperty("wc-tag-name")
-    private String wcTagName;
-
-    @JsonProperty("app-id")
+    @JsonProperty("appId")
     private String appId;
 
-    @JsonProperty("app-version")
+    @JsonProperty("appVersion")
     private String appVersion;
 
-    @JsonProperty("note")
-    private String note;
+    @JsonProperty("appName")
+    private String appName;
+
+    @JsonProperty("description")
+    private String description;
+
+    @JsonProperty("remoteBaseUrl")
+    private String remoteBaseUrl;
+
+    @JsonProperty("remoteEntry")
+    private String remoteEntry;
+
+    @JsonProperty("productName")
+    private String productName;
+
+    @JsonProperty("classifications")
+    private Set<String> classifications;
 
     @JsonProperty("contact")
     private String contact;
 
-    @JsonProperty("remote-base-url")
-    private String remoteBaseUrl;
+    @JsonProperty("iconName")
+    private String iconName;
 
-    public enum ModuleType {
+    @JsonProperty("note")
+    private String note;
 
-        ANGULAR,
-        WEBCOMPONENT;
-    }
+    @JsonProperty("exposedModule")
+    private String exposedModule;
 
-    public String getMfeId() {
-        return mfeId;
-    }
+    @JsonProperty("technology")
+    private String technology;
 
-    public void setMfeId(String mfeId) {
-        this.mfeId = mfeId;
-    }
-
-    public String getBasePath() {
-        return basePath;
-    }
-
-    public void setBasePath(String basePath) {
-        this.basePath = basePath;
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public String getRemoteEntry() {
-        return remoteEntry;
-    }
-
-    public void setRemoteEntry(String remoteEntry) {
-        this.remoteEntry = remoteEntry;
-    }
-
-    public String getRemoteName() {
-        return remoteName;
-    }
-
-    public void setRemoteName(String remoteName) {
-        this.remoteName = remoteName;
-    }
-
-    public String getExposedModule() {
-        return exposedModule;
-    }
-
-    public void setExposedModule(String exposedModule) {
-        this.exposedModule = exposedModule;
-    }
-
-    public String getDisplayName() {
-        return displayName;
-    }
-
-    public void setDisplayName(String displayName) {
-        this.displayName = displayName;
-    }
-
-    public ModuleType getModuleType() {
-        return moduleType;
-    }
-
-    public void setModuleType(ModuleType moduleType) {
-        this.moduleType = moduleType;
-    }
-
-    public String getWcTagName() {
-        return wcTagName;
-    }
-
-    public void setWcTagName(String wcTagName) {
-        this.wcTagName = wcTagName;
-    }
+    @JsonProperty("endpoints")
+    private List<MicrofrontendEndpointSpec> endpoints;
 
     public String getAppId() {
         return appId;
@@ -140,12 +67,52 @@ public class MicrofrontendSpec {
         this.appVersion = appVersion;
     }
 
-    public String getNote() {
-        return note;
+    public String getAppName() {
+        return appName;
     }
 
-    public void setNote(String note) {
-        this.note = note;
+    public void setAppName(String appName) {
+        this.appName = appName;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getRemoteBaseUrl() {
+        return remoteBaseUrl;
+    }
+
+    public void setRemoteBaseUrl(String remoteBaseUrl) {
+        this.remoteBaseUrl = remoteBaseUrl;
+    }
+
+    public String getRemoteEntry() {
+        return remoteEntry;
+    }
+
+    public void setRemoteEntry(String remoteEntry) {
+        this.remoteEntry = remoteEntry;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    public Set<String> getClassifications() {
+        return classifications;
+    }
+
+    public void setClassifications(Set<String> classifications) {
+        this.classifications = classifications;
     }
 
     public String getContact() {
@@ -156,11 +123,52 @@ public class MicrofrontendSpec {
         this.contact = contact;
     }
 
-    public String getRemoteBaseUrl() {
-        return remoteBaseUrl;
+    public String getIconName() {
+        return iconName;
     }
 
-    public void setRemoteBaseUrl(String remoteBaseUrl) {
-        this.remoteBaseUrl = remoteBaseUrl;
+    public void setIconName(String iconName) {
+        this.iconName = iconName;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+    public String getExposedModule() {
+        return exposedModule;
+    }
+
+    public void setExposedModule(String exposedModule) {
+        this.exposedModule = exposedModule;
+    }
+
+    public String getTechnology() {
+        return technology;
+    }
+
+    public void setTechnology(String technology) {
+        this.technology = technology;
+    }
+
+    public List<MicrofrontendEndpointSpec> getEndpoints() {
+        return endpoints;
+    }
+
+    public void setEndpoints(List<MicrofrontendEndpointSpec> endpoints) {
+        this.endpoints = endpoints;
+    }
+
+    @Override
+    public String toString() {
+        return "MicrofrontendSpec{" +
+                "appId='" + appId + '\'' +
+                ", appVersion='" + appVersion + '\'' +
+                ", appName='" + appName + '\'' +
+                '}';
     }
 }

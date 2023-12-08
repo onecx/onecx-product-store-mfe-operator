@@ -28,7 +28,7 @@ public class ProductStoreService {
     public int updateMicrofrontend(Microfrontend microfrontend) {
         MicrofrontendSpec spec = microfrontend.getSpec();
         UpdateMfeRequest dto = mapper.map(spec);
-        try (var response = client.createOrUpdateMfe(spec.getMfeId(), dto)) {
+        try (var response = client.createOrUpdateMfe(spec.getAppId(), dto)) {
             log.info("Update micro-fronted response {}", response.getStatus());
             return response.getStatus();
         }

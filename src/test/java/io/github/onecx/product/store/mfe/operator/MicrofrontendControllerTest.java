@@ -4,6 +4,8 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.awaitility.Awaitility.await;
 
+import java.util.List;
+import java.util.Set;
 import java.util.stream.Stream;
 
 import jakarta.inject.Inject;
@@ -74,23 +76,27 @@ class MicrofrontendControllerTest extends AbstractTest {
                         MicrofrontendStatus.Status.ERROR));
     }
 
-    private static MicrofrontendSpec createSpec(String mfeId, String productName, String basePath) {
+    private static MicrofrontendSpec createSpec(String appId, String productName, String basePath) {
+        MicrofrontendEndpointSpec e = new MicrofrontendEndpointSpec();
+        e.setName("n1");
+        e.setPath("p");
+
         MicrofrontendSpec spec = new MicrofrontendSpec();
-        spec.setMfeId(mfeId);
+        spec.setAppId(appId);
         spec.setProductName(productName);
-        spec.setBasePath(basePath);
         spec.setRemoteBaseUrl("test");
-        spec.setRemoteName("test");
         spec.setExposedModule("test");
-        spec.setDisplayName("dn");
-        spec.setModuleType(MicrofrontendSpec.ModuleType.ANGULAR);
-        spec.setWcTagName("wc");
-        spec.setAppId("appId");
+        spec.setTechnology("wc");
         spec.setAppVersion("app-version");
+        spec.setAppName("app-version");
         spec.setNote("note");
         spec.setContact("contact");
         spec.setRemoteBaseUrl("rbu");
+        spec.setIconName("icon1");
+        spec.setDescription("description");
         spec.setRemoteEntry("re");
+        spec.setClassifications(Set.of("c1", "c2"));
+        spec.setEndpoints(List.of(e));
         return spec;
     }
 
@@ -142,7 +148,7 @@ class MicrofrontendControllerTest extends AbstractTest {
         operator.start();
 
         var m = new MicrofrontendSpec();
-        m.setMfeId("test-1");
+        m.setAppId("test-1");
         m.setProductName("product-test");
 
         Microfrontend microfrontend = new Microfrontend();
