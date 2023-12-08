@@ -6,13 +6,19 @@ import io.javaoperatorsdk.operator.api.ObservedGenerationAwareStatus;
 
 public class MicrofrontendStatus extends ObservedGenerationAwareStatus {
 
-    @JsonProperty("product-name")
+    @JsonProperty("productName")
     private String productName;
 
-    @JsonProperty("mfe-id")
-    private String mfeId;
+    @JsonProperty("appId")
+    private String appId;
 
-    @JsonProperty("response-code")
+    @JsonProperty("appVersion")
+    private String appVersion;
+
+    @JsonProperty("appName")
+    private String appName;
+
+    @JsonProperty("responseCode")
     private int responseCode;
 
     @JsonProperty("status")
@@ -48,14 +54,6 @@ public class MicrofrontendStatus extends ObservedGenerationAwareStatus {
         this.responseCode = responseCode;
     }
 
-    public String getMfeId() {
-        return mfeId;
-    }
-
-    public void setMfeId(String mfeId) {
-        this.mfeId = mfeId;
-    }
-
     public String getProductName() {
         return productName;
     }
@@ -70,5 +68,29 @@ public class MicrofrontendStatus extends ObservedGenerationAwareStatus {
 
     public void setStatus(Status status) {
         this.status = status;
+    }
+
+    public String getAppId() {
+        return appId;
+    }
+
+    public void setAppId(String appId) {
+        this.appId = appId;
+    }
+
+    public String getAppVersion() {
+        return appVersion;
+    }
+
+    public void setAppVersion(String appVersion) {
+        this.appVersion = appVersion;
+    }
+
+    public String getAppName() {
+        return appName;
+    }
+
+    public void setAppName(String appName) {
+        this.appName = appName;
     }
 }

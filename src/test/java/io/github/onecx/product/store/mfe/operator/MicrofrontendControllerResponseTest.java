@@ -34,7 +34,9 @@ class MicrofrontendControllerResponseTest extends AbstractTest {
 
         MicrofrontendSpec s = new MicrofrontendSpec();
         s.setProductName("product");
-        s.setMfeId("m1");
+        s.setAppId("m1");
+        s.setAppVersion("m1");
+        s.setAppName("m1");
 
         Microfrontend m = new Microfrontend();
         m.setSpec(s);

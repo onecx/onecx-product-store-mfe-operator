@@ -25,10 +25,10 @@ public class MicrofrontendController implements Reconciler<Microfrontend>, Error
     public UpdateControl<Microfrontend> reconcile(Microfrontend microfrontend, Context<Microfrontend> context)
             throws Exception {
 
-        String mfeId = microfrontend.getSpec().getMfeId();
+        String appId = microfrontend.getSpec().getAppId();
         String productName = microfrontend.getSpec().getProductName();
 
-        log.info("Reconcile microfrontend: {} for product: {}", mfeId, productName);
+        log.info("Reconcile microfrontend: {} for product: {}", appId, productName);
 
         int responseCode = service.updateMicrofrontend(microfrontend);
 
@@ -50,7 +50,9 @@ public class MicrofrontendController implements Reconciler<Microfrontend>, Error
         log.error("Error reconcile resource", e);
         MicrofrontendStatus status = new MicrofrontendStatus();
         status.setProductName(null);
-        status.setMfeId(null);
+        status.setAppId(null);
+        status.setAppName(null);
+        status.setAppVersion(null);
         status.setResponseCode(responseCode);
         status.setStatus(MicrofrontendStatus.Status.ERROR);
         status.setMessage(e.getMessage());
@@ -62,7 +64,9 @@ public class MicrofrontendController implements Reconciler<Microfrontend>, Error
         MicrofrontendStatus result = new MicrofrontendStatus();
         MicrofrontendSpec spec = microfrontend.getSpec();
         result.setProductName(spec.getProductName());
-        result.setMfeId(spec.getMfeId());
+        result.setAppId(spec.getAppId());
+        result.setAppName(spec.getAppName());
+        result.setAppVersion(spec.getAppVersion());
         result.setResponseCode(responseCode);
         var status = switch (responseCode) {
             case 201:
