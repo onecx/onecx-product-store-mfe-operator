@@ -4,16 +4,16 @@ metadata:
   name: {{ .Release.Name }}-{{ .Values.app.name }}-cluster-role
 rules:
   - apiGroups:
-      - io.github.onecx.product.store
+      - "onecx.github.io"
     resources:
       - "microfrontends"
       - "microfrontends/status"
       - "microfrontends/finalizers"
     verbs:
-      - get
-      - list
-      - watch
-      - patch
-      - update
-      - create
-      - delete
+      - "get"
+      - "list"
+      - "watch"
+      - "patch"
+      - "update"
+      - "create"
+      - "delete"
