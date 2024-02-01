@@ -1,4 +1,4 @@
-package io.github.onecx.product.store.mfe.operator;
+package org.tkit.onecx.product.store.mfe.operator;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
