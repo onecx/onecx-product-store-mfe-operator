@@ -90,6 +90,8 @@ class MicrofrontendControllerTest extends AbstractTest {
         spec.setAppVersion("app-version");
         spec.setAppName("app-version");
         spec.setNote("note");
+        spec.setTagName("tagName");
+        spec.setRemoteName("remoteName");
         spec.setContact("contact");
         spec.setRemoteBaseUrl("rbu");
         spec.setIconName("icon1");

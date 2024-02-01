@@ -42,6 +42,12 @@ public class MicrofrontendSpec {
     @JsonProperty("note")
     private String note;
 
+    @JsonProperty("remoteName")
+    private String remoteName;
+
+    @JsonProperty("tagName")
+    private String tagName;
+
     @JsonProperty("exposedModule")
     private String exposedModule;
 
@@ -50,6 +56,22 @@ public class MicrofrontendSpec {
 
     @JsonProperty("endpoints")
     private List<MicrofrontendEndpointSpec> endpoints;
+
+    public String getRemoteName() {
+        return remoteName;
+    }
+
+    public void setRemoteName(String remoteName) {
+        this.remoteName = remoteName;
+    }
+
+    public String getTagName() {
+        return tagName;
+    }
+
+    public void setTagName(String tagName) {
+        this.tagName = tagName;
+    }
 
     public String getAppId() {
         return appId;
