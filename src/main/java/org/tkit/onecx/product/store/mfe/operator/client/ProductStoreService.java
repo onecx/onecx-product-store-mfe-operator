@@ -1,4 +1,4 @@
-package io.github.onecx.product.store.mfe.operator.client;
+package org.tkit.onecx.product.store.mfe.operator.client;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
@@ -6,12 +6,12 @@ import jakarta.inject.Inject;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.tkit.onecx.product.store.mfe.operator.Microfrontend;
+import org.tkit.onecx.product.store.mfe.operator.MicrofrontendSpec;
+import org.tkit.onecx.product.store.mfe.operator.client.mappers.ProductStoreMapper;
 
-import gen.io.github.onecx.product.store.mfe.v1.api.OperatorMfeApi;
-import gen.io.github.onecx.product.store.mfe.v1.model.UpdateMfeRequest;
-import io.github.onecx.product.store.mfe.operator.Microfrontend;
-import io.github.onecx.product.store.mfe.operator.MicrofrontendSpec;
-import io.github.onecx.product.store.mfe.operator.client.mappers.ProductStoreMapper;
+import gen.org.tkit.onecx.product.store.mfe.v1.api.OperatorMfeApi;
+import gen.org.tkit.onecx.product.store.mfe.v1.model.UpdateMfeRequest;
 
 @ApplicationScoped
 public class ProductStoreService {

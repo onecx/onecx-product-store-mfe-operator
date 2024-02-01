@@ -1,4 +1,4 @@
-package io.github.onecx.product.store.mfe.operator;
+package org.tkit.onecx.product.store.mfe.operator;
 
 import static io.javaoperatorsdk.operator.api.reconciler.Constants.WATCH_CURRENT_NAMESPACE;
 
@@ -7,8 +7,8 @@ import jakarta.ws.rs.WebApplicationException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.tkit.onecx.product.store.mfe.operator.client.ProductStoreService;
 
-import io.github.onecx.product.store.mfe.operator.client.ProductStoreService;
 import io.javaoperatorsdk.operator.api.reconciler.*;
 import io.javaoperatorsdk.operator.processing.event.source.filter.OnAddFilter;
 import io.javaoperatorsdk.operator.processing.event.source.filter.OnUpdateFilter;

@@ -1,4 +1,4 @@
-package io.github.onecx.product.store.mfe.operator;
+package org.tkit.onecx.product.store.mfe.operator;
 
 import java.util.List;
 import java.util.Set;
