@@ -68,11 +68,11 @@ class MicrofrontendControllerTest extends AbstractTest {
     private static Stream<Arguments> provideTestData() {
         return Stream.of(
                 Arguments.of("test-1", createSpec("test-1", "product-test", "/test1"), MicrofrontendStatus.Status.CREATED),
-                Arguments.of("test-2", createSpec("test-2", "product-test-2", "/test2"), MicrofrontendStatus.Status.CREATED),
-                Arguments.of("test-3", createSpec("test-3", "product-test-2", "/test3"), MicrofrontendStatus.Status.UPDATED),
-                Arguments.of("test-error-1", createSpec("test-error-1", "product-test-2", "/test2"),
+                Arguments.of("test-2", createSpec("test-2", "product-test", "/test2"), MicrofrontendStatus.Status.CREATED),
+                Arguments.of("test-3", createSpec("test-3", "product-test", "/test3"), MicrofrontendStatus.Status.UPDATED),
+                Arguments.of("test-error-1", createSpec("test-error-1", "product-test2", "/test2"),
                         MicrofrontendStatus.Status.ERROR),
-                Arguments.of("test-error-2", createSpec("test-error-2", "product-test-2", "/test2"),
+                Arguments.of("test-error-2", createSpec("test-error-2", "product-test", "/test2"),
                         MicrofrontendStatus.Status.ERROR));
     }
 
