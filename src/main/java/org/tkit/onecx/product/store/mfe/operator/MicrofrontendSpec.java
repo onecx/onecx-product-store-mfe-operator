@@ -54,8 +54,19 @@ public class MicrofrontendSpec {
     @JsonProperty("technology")
     private String technology;
 
+    @JsonProperty("type")
+    private Microfrontend type;
+
     @JsonProperty("endpoints")
     private List<MicrofrontendEndpointSpec> endpoints;
+
+    public Microfrontend getType() {
+        return type;
+    }
+
+    public void setType(Microfrontend type) {
+        this.type = type;
+    }
 
     public String getRemoteName() {
         return remoteName;
@@ -192,5 +203,10 @@ public class MicrofrontendSpec {
                 ", appVersion='" + appVersion + '\'' +
                 ", appName='" + appName + '\'' +
                 '}';
+    }
+
+    public enum Microfrontend {
+        MODULE,
+        COMPONENT,
     }
 }

@@ -1,0 +1,5 @@
+
+:docker-registry: https://github.com/onecx/onecx-product-store-mfe-operator/pkgs/container/onecx-product-store-mfe-operator
+:helm-registry: https://github.com/onecx/onecx-product-store-mfe-operator/pkgs/container/charts%2Fonecx-product-store-mfe-operator
+:properties-file: src/main/resources/application.properties
+:helm-file: src/main/helm/values.yaml
