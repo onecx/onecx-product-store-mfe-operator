@@ -99,6 +99,8 @@ class MicrofrontendControllerTest extends AbstractTest {
         spec.setRemoteEntry("re");
         spec.setClassifications(Set.of("c1", "c2"));
         spec.setEndpoints(List.of(e));
+        spec.setDeprecated(false);
+        spec.setType(MicrofrontendSpec.Microfrontend.COMPONENT);
         return spec;
     }
 
