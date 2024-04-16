@@ -57,8 +57,19 @@ public class MicrofrontendSpec {
     @JsonProperty("type")
     private Microfrontend type;
 
+    @JsonProperty(value = "deprecated", defaultValue = "false")
+    private boolean deprecated = false;
+
     @JsonProperty("endpoints")
     private List<MicrofrontendEndpointSpec> endpoints;
+
+    public void setDeprecated(boolean deprecated) {
+        this.deprecated = deprecated;
+    }
+
+    public boolean isDeprecated() {
+        return deprecated;
+    }
 
     public Microfrontend getType() {
         return type;

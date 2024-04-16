@@ -121,7 +121,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <url>https://raw.githubusercontent.com/onecx/onecx-product-store-svc/feat/remote_components/src/main/openapi/onecx-product-store-operator-mfe-v1.yaml</url>
+                    <url>https://raw.githubusercontent.com/onecx/onecx-product-store-svc/main/src/main/openapi/onecx-product-store-operator-mfe-v1.yaml</url>
                     <outputDirectory>target/tmp/openapi</outputDirectory>
                     <outputFileName>onecx-product-store-operator-mfe-v1.yaml</outputFileName>
                     <skipCache>true</skipCache>
