@@ -29,6 +29,8 @@ spec:
                   type: array
                 contact:
                   type: string
+                deprecated:
+                  type: boolean
                 description:
                   type: string
                 endpoints:
@@ -57,6 +59,11 @@ spec:
                 tagName:
                   type: string
                 technology:
+                  type: string
+                type:
+                  enum:
+                    - COMPONENT
+                    - MODULE
                   type: string
               type: object
             status:

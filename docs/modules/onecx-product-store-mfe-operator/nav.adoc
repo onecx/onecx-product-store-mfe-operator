@@ -1,0 +1,1 @@
+* xref:onecx-product-store-mfe-operator:index.adoc[Microfrontend Operator]
