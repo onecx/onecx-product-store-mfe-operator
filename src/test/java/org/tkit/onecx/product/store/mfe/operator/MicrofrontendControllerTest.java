@@ -28,7 +28,7 @@ import io.quarkus.test.junit.QuarkusTest;
 @QuarkusTest
 class MicrofrontendControllerTest extends AbstractTest {
 
-    final static Logger log = LoggerFactory.getLogger(MicrofrontendControllerTest.class);
+    static final Logger log = LoggerFactory.getLogger(MicrofrontendControllerTest.class);
 
     @Inject
     Operator operator;
@@ -93,7 +93,7 @@ class MicrofrontendControllerTest extends AbstractTest {
         spec.setTagName("tagName");
         spec.setRemoteName("remoteName");
         spec.setContact("contact");
-        spec.setRemoteBaseUrl("rbu");
+        spec.setRemoteBaseUrl(basePath);
         spec.setIconName("icon1");
         spec.setDescription("description");
         spec.setRemoteEntry("re");
