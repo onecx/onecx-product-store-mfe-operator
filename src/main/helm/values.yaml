@@ -2,9 +2,6 @@ app:
   name: mfe-operator
   image:
     repository: "onecx/onecx-product-store-mfe-operator"
-  env:
-    # See watchNamespaces
-    "QUARKUS_OPERATOR_SDK_CONTROLLERS_MICROFRONTEND_NAMESPACES": "JOSDK_WATCH_CURRENT"
   envCustom:
     - name: KUBERNETES_NAMESPACE
       valueFrom:
@@ -19,6 +16,3 @@ app:
         spec:
           kcConfig:
             defaultClientScopes: [ ocx-ps-mfe:write ]
-
-# Values: JOSDK_WATCH_CURRENT, JOSDK_ALL_NAMESPACES or comma separated list of namespaces
-watchNamespaces: "JOSDK_WATCH_CURRENT"
