@@ -4,5 +4,7 @@ include::onecx-product-store-mfe-operator-attributes.adoc[opts=optional]
 
 include::docs.adoc[opts=optional]
 
+=== Configuration
+include::onecx-product-store-mfe-operator.adoc[opts=optional]
 
 include::onecx-product-store-mfe-operator-docs.adoc[opts=optional]
