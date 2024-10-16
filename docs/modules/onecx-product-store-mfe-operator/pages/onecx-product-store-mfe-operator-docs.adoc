@@ -8,6 +8,10 @@ include::onecx-product-store-mfe-operator-attributes.adoc[opts=optional]
 ====
 [source,properties,subs=attributes+]
 ----
+quarkus.operator-sdk.controllers.microfrontend.retry.max-attempts=10
+quarkus.operator-sdk.controllers.microfrontend.retry.interval.initial=5000
+quarkus.operator-sdk.controllers.microfrontend.retry.interval.multiplier=3
+quarkus.operator-sdk.controllers.microfrontend.retry.interval.max=300000
 %prod.quarkus.rest-client.product_store_client.url=http://onecx-product-store-svc:8080
 %prod.quarkus.rest-client.product_store_client.providers=io.quarkus.oidc.client.reactive.filter.OidcClientRequestReactiveFilter
 %prod.quarkus.oidc-client.client-id=${quarkus.application.name}
@@ -54,18 +58,6 @@ app:
   operator:
     keycloak:
       client:
-        enabled: true
-        spec:
-          kcConfig:
-            defaultClientScopes: [ ocx-ps-mfe:write ]
-
-----
-
-x-ps-mfe:write ]
-
-----
-
-:
         enabled: true
         spec:
           kcConfig:
