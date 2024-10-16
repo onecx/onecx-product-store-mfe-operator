@@ -57,7 +57,7 @@ public class MicrofrontendSpec {
     @JsonProperty("type")
     private Microfrontend type;
 
-    @JsonProperty(value = "deprecated", defaultValue = "false")
+    @JsonProperty(value = "deprecated")
     private boolean deprecated = false;
 
     @JsonProperty("endpoints")
